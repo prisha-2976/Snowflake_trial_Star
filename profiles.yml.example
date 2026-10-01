@@ -1,0 +1,19 @@
+# Copy to ~/.dbt/profiles.yml and fill in your Snowflake trial details.
+northwind_star:
+  target: snowflake
+  outputs:
+    snowflake:
+      type: snowflake
+      account: <your_account_identifier>   # e.g. abc12345.ap-south-1.aws
+      user: <your_user>
+      password: <your_password>
+      role: ACCOUNTADMIN
+      warehouse: COMPUTE_WH
+      database: NORTHWIND_DB
+      schema: ANALYTICS
+      threads: 4
+    # Optional: run the same project locally with DuckDB for quick checks
+    duckdb:
+      type: duckdb
+      path: northwind.duckdb
+      threads: 4

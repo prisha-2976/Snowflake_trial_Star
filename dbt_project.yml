@@ -1,0 +1,19 @@
+name: 'northwind_star'
+version: '1.0.0'
+config-version: 2
+profile: 'northwind_star'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+test-paths: ["tests"]
+
+models:
+  northwind_star:
+    staging:
+      +materialized: view
+    marts:
+      +materialized: table
+
+seeds:
+  northwind_star:
+    +quote_columns: false
